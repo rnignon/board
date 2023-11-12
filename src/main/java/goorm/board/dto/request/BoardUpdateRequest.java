@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserRequest {
-    private String username;
+public class BoardUpdateRequest {
+    private Long id;
+    private String title;
+    private String content;
 }
