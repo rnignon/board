@@ -30,10 +30,8 @@ public class Comment extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private DeleteStatus deleteStatus;
 
-    public Comment(String content, User author, Board board) {
+    public Comment(String content) {
         this.content = content;
-        this.author = author;
-        this.board = board;
         this.deleteStatus = DeleteStatus.ACTIVE;
     }
 

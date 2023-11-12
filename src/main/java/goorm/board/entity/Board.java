@@ -5,10 +5,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.SQLDelete;
 
 @Entity
 @Getter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 // Spring Data JPA에서 delete 메소드를 호출할 때에 삭제 대신 미리 정의된 쿼리를 호출하도록 설정
@@ -29,10 +31,9 @@ public class Board extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private DeleteStatus deleteStatus;
 
-    public void Board(String title, String content, User author) {
+    public Board(String title, String content) {
         this.title = title;
         this.content = content;
-        this.author = author;
         this.deleteStatus = DeleteStatus.ACTIVE;
     }
 
